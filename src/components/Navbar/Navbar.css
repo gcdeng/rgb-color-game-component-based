@@ -1,0 +1,16 @@
+
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+
+@media (min-width: 768px) {
+    nav.navbar {
+        padding: 8px 20vw 8px 20vw;
+    }
+}

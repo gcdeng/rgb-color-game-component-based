@@ -1,0 +1,21 @@
+.board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.color-picked,
+.message {
+    color: #fff;
+}
+
+.color-picked {
+    font-size: 3rem;
+}
+
+.message {
+    font-size: 2rem;
+}
+
+.countdown{
+    display: none;
+}
