@@ -7,7 +7,6 @@ export default class Board extends Component{
     }
     constructor(root, pickedColor){
         super(root);
-        console.log(pickedColor);
         this.title = root.querySelector('.color-picked');
         this.message = root.querySelector('#message');
         this.reset(pickedColor);
@@ -43,7 +42,6 @@ export default class Board extends Component{
             if(this.timeout===0){
                 this.showTimeOutMsg();
                 clearInterval(this.countdownId);
-                this.fire('removeBlinkBg');
                 this.fire('timeout');
             }
         }, 1000);

@@ -56,7 +56,6 @@ export default class Deck extends Component{
 
     handleCardClick(firerCard, color){
         if(this.gameOver === true) return;
-        console.log(color);
         if(color===this.pickedColor){
             this.fire('rightClick', color);
             this.overGame();

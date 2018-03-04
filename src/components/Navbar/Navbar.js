@@ -21,7 +21,6 @@ export default class Navbar extends Component{
         this.removeActiveClassFromNavItems();
         item.classList.add('active');
         this.gameMode = item.querySelector('a').innerHTML.toLowerCase();
-        console.log(this.gameMode);
         this.fire('changeMode', this.gameMode);
         this.navBtn.classList.toggle('collapsed');
         this.navbarContent.classList.toggle('show');

@@ -27,7 +27,6 @@ export default class Main extends Component {
         this.board = new Board(root.querySelector('.board'), this.pickedColor);
         this.board.on('timeout', this.handleTimeOut.bind(this));
         this.board.on('blinkBg', this.blinkBg.bind(this));
-        this.board.on('removeBlinkBg', this.removeBlinkBg.bind(this));
 
         this.reset = new Reset(root.querySelector('.reset'));
         this.reset.on('click', this.handleResetClcik.bind(this));
@@ -46,13 +45,13 @@ export default class Main extends Component {
     }
 
     handleTimeOut(){
+        this.removeBlinkBg();
         this.root.style.backgroundColor = this.pickedColor;
         this.deck.overGame();
         this.reset.reset();
     }
 
     handleDeckRightClick(firer, pickedColor){
-        console.log('right click');
         if(this.gameMode === 'nightmare'){
             this.board.stopCoutDown();
             this.removeBlinkBg();
@@ -63,7 +62,6 @@ export default class Main extends Component {
     }
 
     handleDeckWrongClick(){
-        console.log('wrong click');
         this.board.showWrongMsg();
     }
 
@@ -106,7 +104,6 @@ export default class Main extends Component {
     }
 
     handleResetClcik(){
-        console.log('reset click');
         this.resetMain();
         // generate new deck
         this.deck.reset();
