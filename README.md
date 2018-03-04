@@ -3,7 +3,7 @@ A project from [NTHU Modern Web and App Programming](https://nthu-datalab.github
 
 ### This project was implemented in three ways:
 1. [vanilla js](https://github.com/gcdeng/rgb-color-game)
-2. [vanilla js in component-based design](https://gcdeng.github.io/rgb-color-game-component-based/)
+2. [vanilla js in component-based design](https://gcdeng.github.io/rgb-color-game-component-based/) (This repo)
 3. react [TODO]
 
 ### Features
