@@ -11,8 +11,7 @@ export default class Board extends Component{
         this.title = root.querySelector('.color-picked');
         this.message = root.querySelector('#message');
         this.reset(pickedColor);
-        // this.countDownText = root.querySelector('#countdown');
-        // this.handleCountDown();
+        this.countDownText = root.querySelector('#countdown');
     }
 
     reset(color){
@@ -32,7 +31,33 @@ export default class Board extends Component{
         this.message.innerHTML = 'TIMEOUT!';
     }
 
-    handleCountDown(){
+    startCountDown(){
+        clearInterval(this.countdownId);
+        this.countDownText.style.display = 'block';
+        this.timeout = 5;
+        this.countDownText.innerHTML = this.timeout;
+        this.countdownId = setInterval(()=>{
+            this.timeout--;
+            this.countDownText.innerHTML = this.timeout;
+            this.fire('blinkBg');
+            if(this.timeout===0){
+                this.showTimeOutMsg();
+                clearInterval(this.countdownId);
+                this.fire('removeBlinkBg');
+                this.fire('timeout');
+            }
+        }, 1000);
+
+    }
+
+    stopCoutDown(){
+        clearInterval(this.countdownId);
+    }
+
+    removeCountDown(){
+        this.timeout = 0;
+        clearInterval(this.countdownId);
+        this.countDownText.style.display = 'none';
 
     }
 

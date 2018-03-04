@@ -47,15 +47,19 @@ export default class Deck extends Component{
         this.pickedColor = this.getAnswerColor();
     }
 
+    overGame(){
+        this.gameOver = true;
+        this.cards.forEach(card=>{
+            card.disable();
+        });
+    }
+
     handleCardClick(firerCard, color){
         if(this.gameOver === true) return;
         console.log(color);
         if(color===this.pickedColor){
             this.fire('rightClick', color);
-            this.gameOver = true;
-            this.cards.forEach(card=>{
-                card.disable();
-            });
+            this.overGame();
         } else {
             this.fire('wrongClick');
             firerCard.fadeOut();
