@@ -1,12 +1,12 @@
 
 .card {
-    width: 20vmin;
+    width: 30%;
+    padding-bottom: 30%;
     min-width: 50px;
-    height: 20vmin;
     min-height: 50px;
-    margin: 1vw;
+    margin: 1.66%;
     cursor: default;
-    border: none;
+    border-radius: 1rem;
     transition: all 0.6s ease-in-out;
     -webkit-transition: all 0.6s ease-in-out;
     -moz-transition: all 0.6s ease-in-out;
@@ -15,8 +15,8 @@
 
 
 @media (min-width: 768px) {
-    .card{
+    /* .card{
         width: 14vmin;
         height: 14vmin;
-    }
+    } */
 }

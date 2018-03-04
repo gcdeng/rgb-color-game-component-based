@@ -14,10 +14,11 @@ export default class Main extends Component {
     
     constructor(root){
         super(root);
+        this.cardNum = 3;
         this.navbar = new Navbar(root.querySelector('.navbar'));
         this.navbar.on('changeMode', this.handleMode.bind(this));
 
-        this.deck = new Deck(root.querySelector('.deck'), 3);
+        this.deck = new Deck(root.querySelector('.deck'), this.cardNum);
         this.deck.on('rightClick', this.handleDeckRightClick.bind(this));
         this.deck.on('wrongClick', this.handleDeckWrongClick.bind(this));
 
@@ -28,7 +29,7 @@ export default class Main extends Component {
     }
 
     handleDeckRightClick(firer, pickedColor){
-        console.log('gameOver');
+        console.log('right click');
         this.root.style.backgroundColor = pickedColor;
         this.board.showCorrectMsg();
         this.reset.showPlayAgain();
@@ -40,7 +41,27 @@ export default class Main extends Component {
     }
 
     handleMode(firer, gameMode){
-        console.log(gameMode);
+        this.root.style.backgroundColor = 'rgb(35, 35, 35)';
+        this.reset.reset();
+        switch (gameMode){
+            case 'easy':
+                this.cardNum = 3;
+                // set deck
+                this.deck.setCards(this.cardNum);
+                // set board
+                this.board.reset(this.deck.pickedColor);
+                break;
+            case 'hard':
+                this.cardNum = 6;
+                this.deck.setCards(this.cardNum);
+                this.board.reset(this.deck.pickedColor);
+                break;
+            case 'nightmare':
+                this.cardNum = 6;
+                this.deck.setCards(this.cardNum);
+                this.board.reset(this.deck.pickedColor);
+                break;
+        }
         
     }
 
