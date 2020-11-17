@@ -1,7 +1,9 @@
 # rgb-color-game-component-based
 
-辨識RGB色碼的小遊戲。
-練習設置Webpack並實作一個簡單的JavaScript元件框架。
+![](/screenshot.png)
+
+辨識RGB色碼的小遊戲。  
+練習配置Webpack並實作一個簡單的JavaScript元件框架。
 
 A project from [NTHU Modern Web and App Programming](https://nthu-datalab.github.io/webapp/index.html).  
 
